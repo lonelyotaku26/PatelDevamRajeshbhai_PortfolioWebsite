@@ -1,0 +1,243 @@
+/* Simple responsive portfolio styles */
+
+/* Variables */
+
+
+/* Optional: stronger border on hover for emphasis */ 
+.project-card:hover, .skill:hover, .contact-form:hover, .contact-info:hover, .hero-card:hover { border-color: rgba(122,162,255,0.18); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(3,6,12,0.55); }
+:root{
+  --bg: #112b3a;        /* lighter page background */
+  --card:#0b1220;
+  --muted:#93a3b5;
+  --accent:#5dd4b7;
+  --accent-2:#7aa2ff;
+  --text:#e6eef6;
+  --radius:12px;
+  --container:1100px;
+  --glass: rgba(255,255,255,0.03);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+body{
+  margin:0;
+  /* lighter gradient so cards are easier to read */
+  background: linear-gradient(180deg, var(--bg) 0%, #08202b 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg, var(--bg) 0%, #071222 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  padding-top: 64px;
+}
+
+/* container */
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 1.25rem;
+}
+
+/* Header */
+/* Header: make fixed at top so navbar stays visible while scrolling */
+.site-header{
+  position: fixed; /* changed from sticky to fixed */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999; /* keep it above everything else */
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  background: linear-gradient(90deg, rgba(5,7,11,0.7), rgba(8,12,18,0.4));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Keep header inner layout but set an explicit height so body padding can match */
+.header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  height: 64px; /* fixed header height used to offset page content */
+}
+.brand{
+  font-weight:700;
+  color:var(--text);
+  text-decoration:none;
+  font-size:1.05rem;
+}
+.nav ul{
+  list-style:none;
+  display:flex;
+  gap:1rem;
+  margin:0;
+  padding:0;
+  align-items:center;
+}
+.nav a{
+  color:var(--muted);
+  text-decoration:none;
+  padding:0.45rem 0.6rem;
+  border-radius:8px;
+  transition: all 180ms;
+}
+.nav a:hover{ color:var(--text); background:var(--glass); transform:translateY(-2px); }
+.resume-btn{ background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#04202a; padding:0.45rem 0.6rem; font-weight:600;}
+
+/* Mobile nav toggle */
+.nav-toggle{
+  display:none;
+  background:none;
+  border:0;
+  cursor:pointer;
+  padding:0.25rem;
+}
+.nav-toggle span{
+  display:block;
+  width:20px;
+  height:2px;
+  background:var(--text);
+  margin:4px 0;
+  transition: all 160ms;
+}
+
+/* Hero */
+.hero{
+  padding:3rem 0 2rem;
+}
+.hero-inner{ display:flex; align-items:center; justify-content:center; }
+.hero-card{
+  width:100%;
+  display:flex;
+  gap:1.25rem;
+  align-items:center;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:1.25rem;
+  border-radius:var(--radius);
+  box-shadow: 0 4px 30px rgba(2,6,12,0.6);
+}
+.avatar-wrap{ flex:0 0 120px; display:flex; align-items:center; justify-content:center; }
+.avatar{ width:110px; height:110px; border-radius:50%; background:#0a0f17; border:2px solid rgba(255,255,255,0.03); }
+/* Content */
+.hero-content .name{ margin:0; font-size:1.6rem; }
+.tagline{ margin:.25rem 0; color:var(--accent-2); font-weight:600; }
+.bio{ color:var(--muted); margin-bottom:.75rem }
+.hero-cta{ display:flex; gap:.6rem; flex-wrap:wrap; }
+.btn{
+  display:inline-block;
+  padding:0.6rem 0.85rem;
+  text-decoration:none;
+  border-radius:8px;
+  cursor:pointer;
+  border:1px solid rgba(255,255,255,0.04);
+}
+.btn.primary{ background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#04202a; font-weight:600; }
+.btn.outline{ background:transparent; color:var(--text); border:1px solid rgba(255,255,255,0.06); }
+/* Add this near the other .btn rules: gradient-on-hover for targeted buttons */
+.btn.gradient-on-hover {
+  /* keep outline look by default (inherits .btn.outline styles) */
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .22s ease, color .22s ease;
+}
+
+/* Hover/focus state: swap to gradient, dark text, remove border */
+.btn.gradient-on-hover:hover,
+.btn.gradient-on-hover:focus {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #04202a; /* dark text to contrast with gradient */
+  border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(10,30,60,0.30);
+  outline: none;
+}
+
+/* Support for keyboard focus (accessibility) */
+.btn.gradient-on-hover:focus {
+  box-shadow: 0 0 0 4px rgba(122,162,255,0.12), 0 10px 28px rgba(10,30,60,0.30);
+}
+
+/* On touch devices, :hover may not apply — this keeps the pressed state nice */
+@media (hover: none) {
+  .btn.gradient-on-hover:active {
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: #04202a;
+    transform: translateY(-1px);
+  }
+}
+/* Sections */
+.section{ padding:2.5rem 0; }
+.section-title{ font-size:1.25rem; margin:0 0 .5rem; }
+.section-desc{ color:var(--muted); margin:0 0 1rem; }
+
+/* Skills */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1rem;
+}
+.skill{ background:var(--card); padding:1rem; border-radius:10px; }
+.skill h3{ margin:0 0 .5rem; font-size:1rem; }
+.progress{ width:100%; height:10px; background:rgba(255,255,255,0.03); border-radius:8px; overflow:hidden; }
+.progress span{ display:block; height:100%; background:linear-gradient(90deg,var(--accent),var(--accent-2)); border-radius:8px; transition: width .6s ease; }
+
+/* Projects */
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1rem;
+}
+.project-card{ background:var(--card); padding:1rem; border-radius:10px; transition:transform .18s ease, box-shadow .18s ease; }
+.project-card:hover{ transform:translateY(-6px); box-shadow: 0 10px 30px rgba(3,6,12,0.6); }
+.project-links a{ color:var(--accent-2); margin-right:.6rem; text-decoration:none; }
+
+/* Contact */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:1rem;
+}
+.contact-form{ background:var(--card); padding:1rem; border-radius:10px; display:flex; flex-direction:column; gap:.6rem; }
+.contact-form label{ display:flex; flex-direction:column; color:var(--muted); font-size:.9rem; }
+.contact-form input, .contact-form textarea{
+  margin-top:.4rem;
+  padding:.6rem;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.03);
+  background:rgba(255,255,255,0.02);
+  color:var(--text);
+  border: 1px solid rgba(255,255,255,0.09);
+}
+.form-actions{ display:flex; gap:.6rem; margin-top:.5rem; }
+.form-note{ color:var(--muted); margin-top:.5rem; }
+
+.contact-info{ background:var(--card); padding:1rem; border-radius:10px; color:var(--muted); }
+.social-list{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:.5rem; }
+.social-list a{ color:var(--accent-2); text-decoration:none; }
+
+/* Footer */
+.site-footer{ padding:1rem 0; margin-top:2rem; border-top:1px solid rgba(255,255,255,0.02); }
+.footer-inner{ display:flex; align-items:center; justify-content:space-between; gap:1rem; color:var(--muted); }
+
+/* Responsive */
+@media (max-width:900px){
+  .contact-grid{ grid-template-columns:1fr; }
+  .hero-card{ flex-direction:column; text-align:center; align-items:center; }
+  .avatar-wrap{ order:0 }
+  .nav ul{ display:none; position:absolute; top:64px; right:1.25rem; background:linear-gradient(180deg, rgba(5,7,11,0.9), rgba(8,12,18,0.92)); padding:1rem; border-radius:8px; flex-direction:column; width:220px; }
+  .nav.open ul{ display:flex; }
+  .nav-toggle{ display:block; }
+  .header-inner{ position:relative; }
+  .footer-inner{ flex-direction:column; align-items:flex-start; gap:.6rem; }
+}
+@media (max-width:520px){
+  .hero-content .name{ font-size:1.35rem; }
+  .avatar{ width:92px; height:92px; }
+}
