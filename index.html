@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Patel Devam R. Portfolio</title>
+  <meta name="description" content="Personal portfolio of Lonely Otaku — projects, skills, and contact." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">Patel Devam R.</a>
+
+      <nav class="nav" id="nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="btn outline nav-resume gradient-on-hover" href="resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+        </ul>
+      </nav>
+
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-card">
+          <div class="avatar-wrap">
+            <img src="images/avatar.svg" alt="Avatar" class="avatar" />
+          </div>
+          <div class="hero-content">
+            <h1 class="name">Patel Devam R.</h1>
+            <p class="tagline">Front-end Developer • Student • Lifelong Learner</p>
+            <p class="bio">Hi — I'm a student building accessible, responsive websites with HTML, CSS and JavaScript. I enjoy making clear interfaces and learning new web technologies.</p>
+            <div class="hero-cta">
+              <a class="btn outline gradient-on-hover" href="#projects">See Projects</a>
+              <a class="btn outline gradient-on-hover" href="resume.pdf" target="_blank" rel="noopener">Download Résumé</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <p class="section-desc">Technical and soft skills I bring to projects.</p>
+
+        <div class="skills-grid">
+          <div class="skill">
+            <h3>HTML & CSS</h3>
+            <div class="progress"><span style="width: 90%"></span></div>
+          </div>
+          <div class="skill">
+            <h3>JavaScript</h3>
+            <div class="progress"><span style="width: 80%"></span></div>
+          </div>
+          <div class="skill">
+            <h3>React</h3>
+            <div class="progress"><span style="width: 35%"></span></div>
+          </div>
+          <div class="skill">
+            <h3>Version Control (Git)</h3>
+            <div class="progress"><span style="width: 75%"></span></div>
+          </div>
+          <div class="skill">
+            <h3>Communication</h3>
+            <div class="progress"><span style="width: 85%"></span></div>
+          </div>
+          <div class="skill">
+            <h3>Problem Solving</h3>
+            <div class="progress"><span style="width: 80%"></span></div>
+          </div>
+          <div class="skill">
+            <h3>Python</h3>
+            <div class="progress"><span style="width: 90%"></span></div>
+          </div>
+          <div class="skill">
+            <h3>Java</h3>
+            <div class="progress"><span style="width: 80%"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-desc">A selection of sample projects with short descriptions.</p>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3>Project One</h3>
+            <p>Responsive website built with HTML/CSS/JS. Focused on accessibility and performance.</p>
+            <p class="project-links">
+              <a href="https://github.com/yourusername/project-one" target="_blank" rel="noopener">GitHub</a>
+              <a href="#" target="_blank" rel="noopener">Live Demo</a>
+            </p>
+          </article>
+
+          <article class="project-card">
+            <h3>Project Two</h3>
+            <p>Interactive UI using vanilla JavaScript: animations and state handling.</p>
+            <p class="project-links">
+              <a href="https://github.com/yourusername/project-two" target="_blank" rel="noopener">GitHub</a>
+              <a href="#" target="_blank" rel="noopener">Live Demo</a>
+            </p>
+          </article>
+
+          <article class="project-card">
+            <h3>Project Three</h3>
+            <p>Small React app demonstrating component structure and routing.</p>
+            <p class="project-links">
+              <a href="https://github.com/yourusername/project-three" target="_blank" rel="noopener">GitHub</a>
+            </p>
+          </article>
+
+          <article class="project-card">
+            <h3>Project Four</h3>
+            <p>Design-to-code exercise emphasizing responsive grid and typography.</p>
+            <p class="project-links">
+              <a href="https://github.com/yourusername/project-four" target="_blank" rel="noopener">GitHub</a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-desc">Get in touch — fill the form or use the social links below.</p>
+
+        <div class="contact-grid">
+          <form id="contact-form" class="contact-form" aria-label="Contact form">
+            <label>
+              Name
+              <input type="text" name="name" id="name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" id="email" required />
+            </label>
+            <label>
+              Message
+              <textarea name="message" id="message" rows="5" required></textarea>
+            </label>
+            <div class="form-actions">
+              <button class="btn primary" type="submit">Send Message</button>
+              <button class="btn outline" type="reset">Reset</button>
+            </div>
+            <p id="form-note" class="form-note" aria-live="polite"></p>
+          </form>
+
+          <div class="contact-info">
+            <h3>Connect</h3>
+            <p>You can also reach me via:</p>
+            <ul class="social-list">
+              <li><a href="https://github.com/lonelyotaku26" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/devam-patel-8a4104391/" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a href="https://www.instagram.com/intense._.th__ghts/" target="_blank" rel="noopener">Instagram</a></li>
+              <li><a href="mailto:devampatel684@gmail.com">Email</a></li>
+            </ul>
+
+            <div class="small-note">
+              <p>Want to download my résumé? Click the button in the header or the Resume link.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Patel Devam R. — Built with HTML, CSS & JavaScript</p>
+      <div class="footer-social">
+        <a href="https://github.com/lonelyotaku26" target="_blank" rel="noopener" aria-label="GitHub">
+          <!-- GitHub SVG -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.87 5.36.87 11.6c0 4.83 3.13 8.93 7.48 10.38.55.1.75-.24.75-.53 0-.26-.01-1.13-.01-2.05-3.04.66-3.68-1.46-3.68-1.46-.5-1.27-1.22-1.61-1.22-1.61-.99-.68.08-.67.08-.67 1.09.08 1.66 1.12 1.66 1.12.97 1.66 2.54 1.18 3.16.9.1-.7.38-1.18.69-1.45-2.43-.28-4.99-1.21-4.99-5.39 0-1.19.42-2.16 1.11-2.92-.11-.28-.48-1.42.11-2.96 0 0 .9-.29 2.95 1.11A10.2 10.2 0 0 1 12 6.8c.91.004 1.83.12 2.69.35 2.05-1.4 2.95-1.11 2.95-1.11.59 1.54.22 2.68.11 2.96.69.76 1.11 1.73 1.11 2.92 0 4.19-2.56 5.1-5 5.37.39.33.73.98.73 1.98 0 1.43-.01 2.58-.01 2.93 0 .29.2.63.76.52 4.36-1.46 7.48-5.55 7.48-10.38C23.13 5.36 18.27.5 12 .5z" /></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/devam-patel-8a4104391/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <!-- LinkedIn SVG -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0H12v2.2c.68-1.25 2.25-2.2 4.5-2.2 4.81 0 5.5 3.17 5.5 7.3V24h-5V16.5c0-1.85-.03-4.23-2.58-4.23-2.58 0-2.97 2.01-2.97 4.09V24h-5V8z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
