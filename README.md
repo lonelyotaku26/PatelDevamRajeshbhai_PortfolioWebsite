@@ -3,7 +3,9 @@
 This repository contains a responsive personal portfolio template built with HTML, CSS and JavaScript suitable for students (this is mine so change it before using it😋).
 
 live link: https://lonelyotaku26.github.io/PatelDevamRajeshbhai_PortfolioWebsite/
+
 First of all it's just Frontend not Backend so use it if neede for frontend only or make your own backend. okay Thank you ✌
+
 Features
 - Home / About section with name, avatar, bio and CTA
 - Skills section with progress indicators
